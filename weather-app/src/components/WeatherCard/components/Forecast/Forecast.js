@@ -1,23 +1,44 @@
-import React from "react";
-
+import React, { useState } from "react";
+import DayOfWeek from "./DayOfWeek";
+import cloudyDay from "./DayOfWeek/weather_icon/Cloudy_day.png";
+import cloudy from "./DayOfWeek/weather_icon/Cloudy.png";
+import rain from "./DayOfWeek/weather_icon/Rain.png";
+import sunny from "./DayOfWeek/weather_icon/Sunny.png";
 const Forecast = () => {
+  const [forecastData] = useState([
+    {
+      name: "Monday",
+      date: "24 July",
+      iconURL: rain,
+      temperatureRange: "20~25°",
+    },
+    {
+      name: "Tuesday",
+      date: "25 July",
+      iconURL: cloudyDay,
+      temperatureRange: "18~20°",
+    },
+    {
+      name: "Wednesday",
+      date: "26 July",
+      iconURL: cloudy,
+      temperatureRange: "20~23°",
+    },
+    {
+      name: "Thursday",
+      date: "27 July",
+      iconURL: sunny,
+      temperatureRange: "28~32°",
+    },
+  ]);
+  console.log("Forecast data:", forecastData);
+
   return (
-    <>
-      <h1>france</h1>
-      <div className="">
-        <p>cloudy</p>
-        <ul>
-          <li>
-            <h1>humidity</h1>
-            <p>64%</p>
-          </li>
-          <li>
-            <h1>wind</h1>
-            <p>12 k/m</p>
-          </li>
-        </ul>
-      </div>
-    </>
+    <div className="container col-span-6 row-span-3 flex items-center justify-evenly text-[#241e4f]">
+      {forecastData.map((data, index) => {
+        return <DayOfWeek key={index} data={data} />;
+      })}
+    </div>
   );
 };
 

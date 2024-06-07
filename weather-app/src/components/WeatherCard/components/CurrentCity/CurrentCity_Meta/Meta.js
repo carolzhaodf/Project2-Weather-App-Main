@@ -24,7 +24,7 @@ const Meta = () => {
     },
   ];
   return (
-    <div className="container flex  h-[7rem] w-[100%] items-center justify-between rounded-[1rem] bg-[#ebf2fe] p-[2rem]">
+    <div className="container flex h-[7rem] w-[100%] items-center justify-between rounded-[1rem] bg-[#ebf2fe] p-[2rem]">
       {metaInfo.map((info) => {
         return (
           <div className="flex flex-col items-center">
